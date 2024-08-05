@@ -37,6 +37,11 @@ public class ExcuteTest {
         webSite.scrollByPixels(Locators.scroll2Amount); //Scroll 530 píxeles
         //Mini Banner Sube de Nivel
         webSite.IniciarNivel();
+        webSite.scrollByPixels(Locators.scroll2Amount); //Scroll 530 píxeles
+        //Parrilla de planes Fijos
+        webSite.openPlan();
+        webSite.validarPoliticas("https://centrodetransparencia.movistar.com.pe/politica-local-privacidad", "INTERNET FIBRA");
+
 
         //PROBANDO
         // Popup 20% DTO

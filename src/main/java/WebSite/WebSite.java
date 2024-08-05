@@ -62,24 +62,53 @@ public class WebSite {
    public void IniciarNivel() throws InterruptedException {
         driver.findElement(Locators.nivelButton).click();
         Thread.sleep(2000);
-       List<WebElement> checkboxes = driver.findElements(Locators.selectBox);
-       Random random = new Random();
-
-       int numToSelect = random.nextInt(checkboxes.size() + 1);
-
-       for (int i = 0; i < numToSelect; i++) {
-           int index = random.nextInt(checkboxes.size());
-           WebElement checkbox = checkboxes.get(index);
-
-           if (!checkbox.isSelected()) {
-               JavascriptExecutor js = (JavascriptExecutor) driver;
-               js.executeScript("arguments[0].click();", checkbox);
-               Thread.sleep(500);
-           }
-
-           checkboxes.remove(index);
-       }
+//       List<WebElement> checkboxes = driver.findElements(Locators.selectBox);
+//       Random random = new Random();
+//
+//       int numToSelect = random.nextInt(checkboxes.size() + 1);
+//
+//       for (int i = 0; i < numToSelect; i++) {
+//           int index = random.nextInt(checkboxes.size());
+//           WebElement checkbox = checkboxes.get(index);
+//
+//           if (!checkbox.isSelected()) {
+//               JavascriptExecutor js = (JavascriptExecutor) driver;
+//               js.executeScript("arguments[0].click();", checkbox);
+//               Thread.sleep(500);
+//           }
+//
+//           checkboxes.remove(index);
+//       }
    }
+   //Validar links
+   public void openPlan() throws InterruptedException {
+        driver.findElement(Locators.FormularioButton).click();
+        Thread.sleep(2000);
+   }
+   public void validarPoliticas(String urlEsperada, String nombreSeccion) throws InterruptedException {
+        String handlePaginaActual = driver.getWindowHandle();
+        driver.findElement(Locators.LinkTrat).click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+
+        for (String handle : driver.getWindowHandles()) {
+            if (!handle.equals(handlePaginaActual)) {
+                driver.switchTo().window(handle);
+                String urlActual = driver.getCurrentUrl();
+
+                if (urlActual.equals(urlEsperada)) {
+                    System.out.println("URL correcta: " + urlActual + " " + nombreSeccion);
+                    driver.close(); // Cerrar la ventana actual
+                    driver.switchTo().window(handlePaginaActual); // Volver a la ventana inicial
+                } else {
+                    System.err.println("¡Error! La URL no coincide: " + urlActual);
+                    driver.close(); // Cerrar la ventana actual
+                    driver.switchTo().window(handlePaginaActual); // Volver a la ventana inicial
+                }
+            }
+        }
+    }
 
 
 

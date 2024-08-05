@@ -26,6 +26,12 @@ public class Locators {
     public static final By nivelButton = By.xpath("/html/body/div[3]/section/div[5]/div/div[2]");
     public static final By selectBox = By.xpath("/html/body/div[3]/section/div[6]/div/div"); // Identificador del checkbox
 
+    //parrilla
+    public static final By LinkTrat = By.xpath("/html/body/div[6]/div[2]/div/div/div[2]/a");
+    public static final By FormularioButton = By.xpath("/html/body/div[3]/section/div[7]/div[2]/div/div/swiper-container/swiper-slide[1]/div/div[3]/button");
+
+
+
 
 //    // Localizadores Popup 20% DTO
 //    public static final By polm1Link = By.xpath("/html/body/div[5]/div/div[2]/div[1]/div/div/div/div/div/div[2]/div[2]/form/div/div[4]/div[1]/label/span/a");// Identificador del enlace políticas

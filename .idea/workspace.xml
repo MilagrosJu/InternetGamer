@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b8c7e64-62c4-4d99-ac88-b2d1ef5d7a88" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SetUp/SetUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SetUp/SetUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WebSite/Locators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebSite/Locators.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/WebSite/WebSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WebSite/WebSite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ExcuteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ExcuteTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +109,7 @@
       <updated>1720217550675</updated>
       <workItem from="1722525168374" duration="19825000" />
       <workItem from="1722555595713" duration="290000" />
-      <workItem from="1722889854813" duration="4853000" />
+      <workItem from="1722889854813" duration="5922000" />
     </task>
     <servers />
   </component>
@@ -135,7 +132,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/ExcuteTest.java</url>
-          <line>201</line>
+          <line>205</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
