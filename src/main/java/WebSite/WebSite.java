@@ -1,15 +1,11 @@
 package WebSite;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 import java.time.Duration;
-import java.util.List;
-import java.util.Random;
 
 public class WebSite {
 
@@ -36,10 +32,14 @@ public class WebSite {
     //cerrar nodales
     public void closeModal() throws InterruptedException {
         driver.findElement(Locators.cerrarNodal).click();
-        Thread.sleep(1000);
-   }
+        Thread.sleep(4000);
+    }
+    public void closeModal1() throws InterruptedException {
+        driver.findElement(Locators.cerrarNodal1).click();
+        Thread.sleep(4000);
+    }
    //validar pedidos
-   public String validarPedido() {
+   public String validarPedido () {
         return driver.findElement(Locators.confirmationMessage).getText();
    }
     //Click To Call
@@ -51,43 +51,98 @@ public class WebSite {
     }
     //Banner principal
    public void inputFormularioBanner(String celular) {
-        driver.findElement(Locators.inputCelular).click();
-        driver.findElement(Locators.inputCelular).sendKeys(celular);
+        driver.findElement(Locators.inputCelular1).click();
+        driver.findElement(Locators.inputCelular1).sendKeys(celular);
    }
    public void submitPedidoBanner() throws InterruptedException {
-        driver.findElement(Locators.registrarButton).click();
-        Thread.sleep(4000);
+       driver.findElement(Locators.registrarButton).click();
+       Thread.sleep(6000);
    }
     //Mini Banner sube de nivel
    public void IniciarNivel() throws InterruptedException {
-        driver.findElement(Locators.nivelButton).click();
-        Thread.sleep(2000);
-//       List<WebElement> checkboxes = driver.findElements(Locators.selectBox);
-//       Random random = new Random();
-//
-//       int numToSelect = random.nextInt(checkboxes.size() + 1);
-//
-//       for (int i = 0; i < numToSelect; i++) {
-//           int index = random.nextInt(checkboxes.size());
-//           WebElement checkbox = checkboxes.get(index);
-//
-//           if (!checkbox.isSelected()) {
-//               JavascriptExecutor js = (JavascriptExecutor) driver;
-//               js.executeScript("arguments[0].click();", checkbox);
-//               Thread.sleep(500);
-//           }
-//
-//           checkboxes.remove(index);
-//       }
+       driver.findElement(Locators.nivelButton).click();
+       Thread.sleep(2000);
    }
+   //Acordeon
+   public void SeleccionarChecbox() throws InterruptedException {
+       driver.findElement(Locators.selectBox).click();
+       Thread.sleep(500);
+       driver.findElement(Locators.selectBox1).click();
+       Thread.sleep(500);
+       driver.findElement(Locators.selectBox2).click();
+       Thread.sleep(500);
+       driver.findElement(Locators.selectBox3).click();
+       Thread.sleep(500);
+       driver.findElement(Locators.selectBox4).click();
+       Thread.sleep(500);
+       driver.findElement(Locators.selectBox5).click();
+       Thread.sleep(500);
+       driver.findElement(Locators.selectBox6).click();
+       Thread.sleep(500);
+   }
+   public void limpiarButton() throws InterruptedException {
+       driver.findElement(Locators.limpiarButton).click();
+       Thread.sleep(2000);
+   }
+   public void seleccionRandom() throws InterruptedException {
+       driver.findElement(Locators.selectBox).click();
+       Thread.sleep(500);
+       driver.findElement(Locators.selectBox2).click();
+       Thread.sleep(500);
+       driver.findElement(Locators.selectBox3).click();
+       Thread.sleep(500);
+       driver.findElement(Locators.selectBox5).click();
+       Thread.sleep(500);
+   }
+   public void buscarButton() throws InterruptedException {
+       driver.findElement(Locators.buscarButton).click();
+       Thread.sleep(5000);
+   }
+   public void inputFormularioNivel(String dni, String celular) {
+       driver.findElement(Locators.inputDNI).sendKeys(dni);
+       driver.findElement(Locators.inputCelular).sendKeys(celular);
+   }
+
+   public void submitPedidoNivel() throws InterruptedException {
+       driver.findElement(Locators.submitButton2).click();
+       Thread.sleep(4000);
+   }
+
    //Validar links
    public void openPlan() throws InterruptedException {
         driver.findElement(Locators.FormularioButton).click();
         Thread.sleep(2000);
    }
+   public void openTratamiento() throws InterruptedException {
+       driver.findElement(Locators.terminosCheck).click();
+       Thread.sleep(2000);
+       driver.findElement(Locators.terminosCheck).click();
+       Thread.sleep(1000);
+       driver.findElement(Locators.terminosLink).click();
+       Thread.sleep(2000);
+   }
+   //Acordeon
+   public void SeleccionarAcordeon() throws InterruptedException {
+       driver.findElement(Locators.IntVerBenef1).click();
+       Thread.sleep(2000);
+       driver.findElement(Locators.IntVerBenef2).click();
+       Thread.sleep(2000);
+       driver.findElement(Locators.IntVerBenef3).click();
+       Thread.sleep(2000);
+   }
+    public void cerrarAcordeon() throws InterruptedException {
+        driver.findElement(Locators.IntVerBenef1).click();
+        Thread.sleep(1000);
+        driver.findElement(Locators.IntVerBenef2).click();
+        Thread.sleep(1000);
+        driver.findElement(Locators.IntVerBenef3).click();
+        Thread.sleep(1000);
+    }
+
+   //Registrar Plan
    public void validarPoliticas(String urlEsperada, String nombreSeccion) throws InterruptedException {
         String handlePaginaActual = driver.getWindowHandle();
-        driver.findElement(Locators.LinkTrat).click();
+        driver.findElement(Locators.terminosLink1).click();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));
@@ -109,7 +164,38 @@ public class WebSite {
             }
         }
     }
+   public void inputFormulario1(String dni, String celular) {
+        driver.findElement(Locators.input1DNI).sendKeys(dni);
+        driver.findElement(Locators.input1Celular).sendKeys(celular);
+   }
 
+   public void submitPedidoPlan() throws InterruptedException {
+        driver.findElement(Locators.SubmitButton).click();
+        Thread.sleep(5000);
+   }
+
+   public void planDuoTV() throws InterruptedException {
+       driver.findElement(Locators.planDTV).click();
+       Thread.sleep(500);
+   }
+   public void planDuoFijo() throws InterruptedException {
+       driver.findElement(Locators.planDF).click();
+       Thread.sleep(500);
+   }
+   public void planTrio() throws InterruptedException {
+       driver.findElement(Locators.planTrio).click();
+       Thread.sleep(500);
+   }
+   public void preguntasFrec() throws  InterruptedException {
+       driver.findElement(Locators.pregunta1).click();
+       Thread.sleep(1000);
+       driver.findElement(Locators.pregunta2).click();
+       Thread.sleep(1000);
+       driver.findElement(Locators.pregunta3).click();
+       Thread.sleep(1000);
+       driver.findElement(Locators.pregunta4).click();
+       Thread.sleep(1000);
+   }
 
 
 
