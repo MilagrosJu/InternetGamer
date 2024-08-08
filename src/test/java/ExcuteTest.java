@@ -17,7 +17,6 @@ public class ExcuteTest {
         String url = "https://tiendaonline.movistar.com.pe/ofertas/servicioshogar/internet-gamer";
         String celular = "999999999";
         String dni = "99999999";
-        String horario = "2024-08-06 10:00:00"; //Se debe actualizar la fecha
 
         //Scroll
         webSite.navigateToWebsite(url);
