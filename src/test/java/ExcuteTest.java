@@ -13,7 +13,7 @@ public class ExcuteTest {
         driver = SetUp.getDriver();
         webSite = new WebSite(driver);
 
-        // Variables Standar
+        // Variables Standaroup
         String url = "https://tiendaonline.movistar.com.pe/ofertas/servicioshogar/internet-gamer";
         String celular = "999999999";
         String dni = "99999999";
